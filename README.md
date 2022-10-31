@@ -1,2 +1,2 @@
-# Secure password generator
-Simple secure password generator made with JS
+# Password generator
+Simple password generator made with vanilla JS
