@@ -22,6 +22,7 @@
                     <input type="text" id="secure-password" />
                     <button id="copy">
                         <svg
+                            data-ref="copy"
                             viewBox="0 0 448 512"
                             xmlns="http://www.w3.org/2000/svg"
                         >
@@ -54,7 +55,8 @@
                         <input
                             id="uppercase"
                             type="checkbox"
-                            class="switch listen"
+                            class="switch"
+                            data-ref="switch"
                             checked
                         />
                         <label for="uppercase">Include uppercase letters</label>
@@ -64,7 +66,8 @@
                         <input
                             id="lowercase"
                             type="checkbox"
-                            class="switch listen"
+                            class="switch"
+                            data-ref="switch"
                             checked
                         />
                         <label for="lowercase">Include lowercase letters</label>
@@ -74,7 +77,8 @@
                         <input
                             id="numbers"
                             type="checkbox"
-                            class="switch listen"
+                            class="switch"
+                            data-ref="switch"
                             checked
                         />
                         <label for="numbers">Include numbers</label>
@@ -84,13 +88,16 @@
                         <input
                             id="symbols"
                             type="checkbox"
-                            class="switch listen"
+                            class="switch"
+                            data-ref="switch"
                             checked
                         />
                         <label for="symbols">Include symbols</label>
                     </div>
 
-                    <button id="regenerate">Regenerate</button>
+                    <button data-ref="regenerate" id="regenerate">
+                        Regenerate
+                    </button>
                 </div>
             </div>
         </div>

@@ -1,250 +1,251 @@
 @import url(./reset.css);
 
 :root {
-  --mainBackgroundColor: #262626;
-  --blocksBackgroundColor: #353535;
-  --contentSize: 460px;
-  --gap: 18px;
-  --successColor: #04aa6d;
+    --mainBackgroundColor: #262626;
+    --blocksBackgroundColor: #353535;
+    --contentSize: 460px;
+    --gap: 18px;
+    --successColor: #04aa6d;
 
-  /* Checkbox */
-  --active: var(--successColor);
-  --active-inner: #fff;
-  --focus: 2px #04aa6d33;
-  --border: #d2f4d3;
-  --border-hover: var(--successColor);
-  --background: #fff;
-  --disabled: #f6f8ff;
-  --disabled-inner: #e1e6f9;
+    /* Checkbox */
+    --active: var(--successColor);
+    --active-inner: #fff;
+    --focus: 2px #04aa6d33;
+    --border: #d2f4d3;
+    --border-hover: var(--successColor);
+    --background: #fff;
+    --disabled: #f6f8ff;
+    --disabled-inner: #e1e6f9;
 }
 
 *:not(input) {
-  user-select: none;
+    user-select: none;
 }
 
 body {
-  background-color: var(--mainBackgroundColor);
-  font-family: "M PLUS Code Latin", sans-serif;
-  color: white;
+    background-color: var(--mainBackgroundColor);
+    font-family: "M PLUS Code Latin", sans-serif;
+    color: white;
 }
 
 #aligner {
-  display: flex;
-  justify-content: center;
-  min-height: 100vh;
-  align-items: center;
-  padding: 14px;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    align-items: center;
+    padding: 14px;
 }
 
 h1 {
-  text-align: center;
-  margin-bottom: var(--gap);
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 42px;
+    text-align: center;
+    margin-bottom: var(--gap);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 42px;
 }
 
 #aligner > div {
-  max-width: var(--contentSize);
-  width: 100%;
+    max-width: var(--contentSize);
+    width: 100%;
 }
 
 #inputContainer,
 #controlsContainer {
-  background-color: var(--blocksBackgroundColor);
-  margin-bottom: var(--gap);
-  padding: 12px 16px;
-  border-radius: 4px;
-  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.1);
+    background-color: var(--blocksBackgroundColor);
+    margin-bottom: var(--gap);
+    padding: 12px 16px;
+    border-radius: 4px;
+    box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.1);
 }
 
 #inputContainer {
-  position: relative;
-  display: flex;
-  gap: var(--gap);
+    position: relative;
+    display: flex;
+    gap: var(--gap);
 }
 
 #inputContainer input {
-  font-size: 1.4rem;
-  width: calc(100% - 32px);
+    font-size: 1.4rem;
+    width: calc(100% - 32px);
 }
 
 #inputContainer button {
-  width: 32px;
-  margin: 0;
-  text-align: center;
-  display: inline-block;
-  cursor: pointer;
+    width: 32px;
+    margin: 0;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
 }
 
 #inputContainer button svg {
-  --size: 1.3rem;
+    --size: 1.3rem;
 
-  width: var(--size);
-  height: var(--size);
+    width: var(--size);
+    height: var(--size);
 }
 
 #inputContainer button svg path {
-  fill: white;
-  transition: fill 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2);
+    fill: white;
+    transition: fill 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2);
 }
 
 #inputContainer button:hover svg path {
-  fill: var(--successColor);
+    fill: var(--successColor);
 }
 
 #inputContainer span {
-  position: absolute;
-  right: 6px;
-  top: -36px;
-  opacity: 0;
-  transform: translateY(26px);
-  color: var(--successColor);
-  transition: opacity 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2),
-    transform 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2);
+    position: absolute;
+    right: 6px;
+    top: -36px;
+    opacity: 0;
+    transform: translateY(26px);
+    color: var(--successColor);
+    transition: opacity 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2),
+        transform 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2);
 }
 
 #inputContainer span.active {
-  transform: translateY(0);
-  opacity: 1;
+    transform: translateY(0);
+    opacity: 1;
 }
 
 #controlsContainer .control {
-  margin-bottom: 12px;
+    margin-bottom: 12px;
 }
 
 #regenerate {
-  width: 100%;
-  display: block;
-  text-align: center;
-  background-color: var(--successColor);
-  padding: 12px;
-  cursor: pointer;
-  border-radius: 4px;
-  margin-top: 24px;
+    width: 100%;
+    display: block;
+    text-align: center;
+    background-color: var(--successColor);
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 24px;
 }
 
 #controlsContainer .control.sliderContainer {
-  margin: 8px 0 32px;
+    margin: 8px 0 32px;
 }
 
 #infoContainer {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
 }
 
 #infoContainer span {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--successColor);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--successColor);
 }
 
 @supports (-webkit-appearance: none) or (-moz-appearance: none) {
-  .slider {
-    --thumbSize: 24px;
+    .slider {
+        --thumbSize: 24px;
 
-    -webkit-appearance: none;
-    appearance: none;
-    width: 100%;
-    height: 6px;
-    background: var(--mainBackgroundColor);
-    outline: none;
-    border-radius: 4px;
-  }
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%;
+        height: 6px;
+        background: var(--mainBackgroundColor);
+        outline: none;
+        border-radius: 4px;
+    }
 
-  .slider:hover {
-    opacity: 1;
-  }
+    .slider:hover {
+        opacity: 1;
+    }
 
-  .slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: var(--thumbSize);
-    height: var(--thumbSize);
-    border-radius: 50%;
-    background: var(--successColor);
-    cursor: pointer;
-  }
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: var(--thumbSize);
+        height: var(--thumbSize);
+        border-radius: 50%;
+        background: var(--successColor);
+        cursor: pointer;
+    }
 
-  .slider::-moz-range-thumb {
-    width: var(--thumbSize);
-    height: var(--thumbSize);
-    border-radius: 50%;
-    background: var(--successColor);
-    cursor: pointer;
-  }
+    .slider::-moz-range-thumb {
+        width: var(--thumbSize);
+        height: var(--thumbSize);
+        border-radius: 50%;
+        background: var(--successColor);
+        cursor: pointer;
+    }
 
-  input[type="checkbox"] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    height: 21px;
-    outline: none;
-    display: inline-block;
-    position: relative;
-    margin: 0;
-    cursor: pointer;
-    border: 1px solid var(--bc, var(--border));
-    background: var(--b, var(--background));
-    transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
-  }
+    input[type="checkbox"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        height: 21px;
+        outline: none;
+        display: inline-block;
+        position: relative;
+        margin: 0;
+        cursor: pointer;
+        border: 1px solid var(--bc, var(--border));
+        background: var(--b, var(--background));
+        transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
+    }
 
-  input[type="checkbox"]:after {
-    content: "";
-    display: block;
-    left: 0;
-    top: 0;
-    position: absolute;
-    transition: transform var(--d-t, 0.3s) var(--d-t-e, ease),
-      opacity var(--d-o, 0.2s);
-  }
+    input[type="checkbox"]:after {
+        content: "";
+        display: block;
+        left: 0;
+        top: 0;
+        position: absolute;
+        transition: transform var(--d-t, 0.3s) var(--d-t-e, ease),
+            opacity var(--d-o, 0.2s);
+    }
 
-  input[type="checkbox"]:checked {
-    --b: var(--active);
-    --bc: var(--active);
-    --d-o: 0.3s;
-    --d-t: 0.6s;
-    --d-t-e: cubic-bezier(0.2, 0.85, 0.32, 1.2);
-  }
+    input[type="checkbox"]:checked {
+        --b: var(--active);
+        --bc: var(--active);
+        --d-o: 0.3s;
+        --d-t: 0.6s;
+        --d-t-e: cubic-bezier(0.2, 0.85, 0.32, 1.2);
+    }
 
-  input[type="checkbox"]:hover:not(:checked):not(:disabled) {
-    --bc: var(--border-hover);
-  }
+    input[type="checkbox"]:hover:not(:checked):not(:disabled) {
+        --bc: var(--border-hover);
+    }
 
-  input[type="checkbox"]:focus {
-    box-shadow: 0 0 0 var(--focus);
-  }
+    input[type="checkbox"]:focus {
+        box-shadow: 0 0 0 var(--focus);
+    }
 
-  input[type="checkbox"] + label {
-    line-height: 21px;
-    display: inline-block;
-    vertical-align: top;
-    cursor: pointer;
-    margin-left: 4px;
-  }
+    input[type="checkbox"] + label {
+        line-height: 21px;
+        display: inline-block;
+        vertical-align: top;
+        cursor: pointer;
+        margin-left: 4px;
+    }
 
-  input[type="checkbox"].switch {
-    width: 38px;
-    border-radius: 4px;
-  }
+    input[type="checkbox"].switch {
+        width: 38px;
+        border-radius: 4px;
+    }
 
-  input[type="checkbox"].switch:after {
-    left: 2px;
-    top: 2px;
-    border-radius: 4px;
-    width: 15px;
-    height: 15px;
-    background: var(--ab, var(--border));
-    transform: translateX(var(--x, 0));
-  }
+    input[type="checkbox"].switch:after {
+        left: 2px;
+        top: 2px;
+        border-radius: 4px;
+        width: 15px;
+        height: 15px;
+        background: var(--ab, var(--border));
+        transform: translateX(var(--x, 0));
+    }
 
-  input[type="checkbox"].switch:checked {
-    --ab: var(--active-inner);
-    --x: 17px;
-  }
+    input[type="checkbox"].switch:checked {
+        --ab: var(--active-inner);
+        --x: 17px;
+    }
 
-  input[type="checkbox"].switch:disabled:not(:checked):after {
-    opacity: 0.6;
-  }
+    input[type="checkbox"].switch:disabled:not(:checked):after {
+        opacity: 0.6;
+    }
 }
