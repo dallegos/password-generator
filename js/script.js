@@ -49,7 +49,7 @@ function generatePassword() {
         flags.symbols
             ? config.symbols[randomNumber(config.symbols.length)]
             : "",
-    ];
+    ].join("");
 
     return Array.from({ length: flags.length - required.length }, () =>
         randomNumber(characterList.length)
