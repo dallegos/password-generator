@@ -49,15 +49,17 @@ function generatePassword() {
         flags.symbols
             ? config.symbols[randomNumber(config.symbols.length)]
             : "",
-    ].join("");
+    ];
 
-    const string = Array.from({ length: flags.length - required.length }, () =>
+    return Array.from({ length: flags.length - required.length }, () =>
         randomNumber(characterList.length)
     )
         .map((number) => characterList[number])
+        .concat(required)
+        .sort(() => {
+            return 0.5 - Math.random();
+        })
         .join("");
-
-    return string + required;
 }
 
 function updateInput() {
@@ -96,9 +98,6 @@ document.body.addEventListener("click", (event) => {
 
         case "regenerate":
             updateInput();
-            break;
-
-        default:
             break;
     }
 });
