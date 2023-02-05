@@ -2,10 +2,27 @@
 
 :root {
     --mainBackgroundColor: #262626;
+    --mainColor: white;
+    --mainFont: "M PLUS Code Latin", sans-serif;
+
     --blocksBackgroundColor: #353535;
     --contentSize: 460px;
     --gap: 18px;
     --successColor: #04aa6d;
+    --boxShadowDefault: 4px 4px 0px 0px rgba(0, 0, 0, 0.1);
+    --contentYPadding: 12px;
+    --contentXPadding: 16px;
+    --borderRadiusDefault: 4px;
+    --copyButtonSize: 24px;
+    --inputFontSize: 1.4rem;
+
+    --svgColor: white;
+
+    --headingFontSize: 1.3rem;
+    --headingGap: 42px;
+    --headingColor: white;
+
+    --controlsGap: 12px;
 
     /* Checkbox */
     --active: var(--successColor);
@@ -24,8 +41,8 @@
 
 body {
     background-color: var(--mainBackgroundColor);
-    font-family: "M PLUS Code Latin", sans-serif;
-    color: white;
+    font-family: var(--mainFont);
+    color: var(--mainColor);
 }
 
 #aligner {
@@ -33,15 +50,15 @@ body {
     justify-content: center;
     min-height: 100vh;
     align-items: center;
-    padding: 14px;
 }
 
 h1 {
     text-align: center;
     margin-bottom: var(--gap);
-    font-size: 1.3rem;
+    font-size: var(--headingFontSize);
     font-weight: 600;
-    margin-bottom: 42px;
+    margin-bottom: var(--headingGap);
+    color: var(--headingColor);
 }
 
 #aligner > div {
@@ -53,9 +70,9 @@ h1 {
 #controlsContainer {
     background-color: var(--blocksBackgroundColor);
     margin-bottom: var(--gap);
-    padding: 12px 16px;
-    border-radius: 4px;
-    box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.1);
+    padding: var(--contentYPadding) var(--contentXPadding);
+    border-radius: var(--borderRadiusDefault);
+    box-shadow: var(--boxShadowDefault);
 }
 
 #inputContainer {
@@ -65,12 +82,12 @@ h1 {
 }
 
 #inputContainer input {
-    font-size: 1.4rem;
-    width: calc(100% - 32px);
+    font-size: var(--inputFontSize);
+    width: calc(100% - var(--copyButtonSize));
 }
 
 #inputContainer button {
-    width: 32px;
+    width: var(--copyButtonSize);
     margin: 0;
     text-align: center;
     display: inline-block;
@@ -78,14 +95,12 @@ h1 {
 }
 
 #inputContainer button svg {
-    --size: 1.3rem;
-
-    width: var(--size);
-    height: var(--size);
+    width: var(--copyButtonSize);
+    height: var(--copyButtonSize);
 }
 
 #inputContainer button svg path {
-    fill: white;
+    fill: var(--svgColor);
     transition: fill 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2);
 }
 
@@ -110,7 +125,7 @@ h1 {
 }
 
 #controlsContainer .control {
-    margin-bottom: 12px;
+    margin-bottom: var(--controlsGap);
 }
 
 #regenerate {
@@ -118,20 +133,20 @@ h1 {
     display: block;
     text-align: center;
     background-color: var(--successColor);
-    padding: 12px;
+    padding: var(--contentYPadding);
     cursor: pointer;
-    border-radius: 4px;
-    margin-top: 24px;
+    border-radius: var(--borderRadiusDefault);
+    margin-top: calc(2 * var(--contentYPadding));
 }
 
 #controlsContainer .control.sliderContainer {
-    margin: 8px 0 32px;
+    margin: calc(var(--contentYPadding) / 3) 0 calc(var(--contentYPadding) * 3);
 }
 
 #infoContainer {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 8px;
+    margin-bottom: calc(var(--contentYPadding) / 3);
 }
 
 #infoContainer span {

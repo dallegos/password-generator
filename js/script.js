@@ -12,7 +12,7 @@ const config = Object.seal({
 });
 
 const flags = Object.create({
-    length: 16,
+    length: 48,
     lowercase: true,
     uppercase: true,
     numbers: true,
@@ -26,30 +26,33 @@ function randomNumber(limit) {
 }
 
 function generatePassword() {
-    const characterList = [
-        ...(flags.lowercase ? config.characters : []),
-        ...(flags.uppercase ? config.characters.toLocaleUpperCase() : []),
-        ...(flags.numbers ? config.numbers : []),
-        ...(flags.symbols ? config.symbols : []),
-    ].join("");
+    let characterList = [];
+    let required = [];
 
-    // At least one of each with flag on true
-    const required = [
-        flags.lowercase
-            ? config.characters[randomNumber(config.characters.length)]
-            : "",
-        flags.uppercase
-            ? config.characters[
-                  randomNumber(config.characters.length)
-              ].toLocaleUpperCase()
-            : "",
-        flags.numbers
-            ? config.numbers[randomNumber(config.numbers.length)]
-            : "",
-        flags.symbols
-            ? config.symbols[randomNumber(config.symbols.length)]
-            : "",
-    ].join("");
+    for (const key in flags) {
+        if (key === "length") continue;
+        const flag = flags[key];
+
+        if (key === "lowercase" && flag) {
+            characterList.push(config.characters);
+            required.push(
+                config.characters[randomNumber(config.characters.length)]
+            );
+        } else if (key === "uppercase" && flag) {
+            characterList.push(config.characters.toLocaleUpperCase());
+            required.push(
+                config.characters[
+                    randomNumber(config.characters.length)
+                ].toLocaleUpperCase()
+            );
+        } else if ((key === "numbers" || key === "symbols") && flag) {
+            characterList.push(config[key]);
+            required.push(config[key][randomNumber(config[key].length)]);
+        }
+    }
+
+    characterList = characterList.join("");
+    required = required.join("");
 
     return Array.from({ length: flags.length - required.length }, () =>
         randomNumber(characterList.length)
@@ -108,4 +111,12 @@ elements.rangeSlider.addEventListener("input", (event) => {
     updateInput();
 });
 
-updateInput();
+function init() {
+    elements.rangeSlider.max = flags.length;
+    elements.rangeSlider.value = flags.length / 2;
+    elements.charactersLengthText.textContent = flags.length / 2;
+
+    updateInput();
+}
+
+init();
